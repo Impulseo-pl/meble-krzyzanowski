@@ -22,13 +22,13 @@
   --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-5:24px;
   --space-6:32px; --space-7:48px; --space-8:64px; --space-9:96px; --space-10:128px;
 
-  /* TYPOGRAFIA — fluid clamp() (skala podbita 16.07.2026: większe, czytelniejsze litery — uwaga Adama) */
-  --text-sm:clamp(.9rem,.87rem + .12vw,1rem);
-  --text-base:clamp(1.08rem,1.04rem + .18vw,1.2rem);
-  --text-lg:clamp(1.24rem,1.15rem + .34vw,1.44rem);
-  --text-h3:clamp(1.34rem,1.22rem + .55vw,1.66rem);
-  --text-h2:clamp(2.1rem,1.66rem + 2.1vw,3.1rem);
-  --text-h1:clamp(2.9rem,2.1rem + 4vw,5.1rem);
+  /* TYPOGRAFIA — fluid clamp() (skala ZJECHANA 27.07.2026: litery były za duże w całym serwisie) */
+  --text-sm:clamp(.8rem,.78rem + .1vw,.88rem);
+  --text-base:clamp(.95rem,.92rem + .14vw,1.04rem);
+  --text-lg:clamp(1.06rem,1rem + .24vw,1.2rem);
+  --text-h3:clamp(1.12rem,1.04rem + .38vw,1.34rem);
+  --text-h2:clamp(1.62rem,1.32rem + 1.45vw,2.3rem);
+  --text-h1:clamp(2.1rem,1.6rem + 2.6vw,3.4rem);
 
   /* PROMIENIE — architektoniczne, raczej ostre */
   --r-sm:3px; --r-md:6px; --r-lg:10px;
@@ -112,8 +112,8 @@ p{max-width:65ch}
 }
 .nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
 .brand{display:flex;flex-direction:column;line-height:1}
-.brand .name{font-family:var(--font-display);font-weight:800;font-size:1.35rem;letter-spacing:.04em}
-.brand .sub{font-size:.62rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.brand .name{font-family:var(--font-display);font-weight:800;font-size:1.14rem;letter-spacing:.04em}
+.brand .sub{font-size:.58rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);margin-top:5px}
 .nav-links{display:flex;align-items:center;gap:var(--space-6)}
 .nav-links a{font-size:var(--text-sm);font-weight:500;color:var(--ink-soft);position:relative;padding-block:4px;transition:color var(--dur) var(--ease)}
 .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--accent);transition:width var(--dur) var(--ease)}
@@ -141,7 +141,7 @@ p{max-width:65ch}
 .hero-badge{position:absolute;left:var(--space-5);bottom:var(--space-5);z-index:2;
   background:rgba(252,252,251,.94);backdrop-filter:blur(4px);
   border-radius:var(--r-md);padding:var(--space-4) var(--space-5);box-shadow:var(--sh-md);max-width:78%}
-.hero-badge strong{display:block;font-family:var(--font-display);font-size:1rem;letter-spacing:-.01em}
+.hero-badge strong{display:block;font-family:var(--font-display);font-size:.92rem;letter-spacing:-.01em}
 .hero-badge span{font-size:var(--text-sm);color:var(--muted)}
 
 /* ---------- HERO duży / kinowy (strona główna) ---------- */
@@ -153,7 +153,7 @@ p{max-width:65ch}
 .hero-cine .hero-copy{max-width:660px}
 .hero-cine .eyebrow{color:#fff;margin-bottom:var(--space-5)}
 .hero-cine .eyebrow::before{background:#fff}
-.hero-cine h1{color:#fff;margin-bottom:var(--space-5);font-size:clamp(2.9rem,2rem + 4.4vw,5.2rem)}
+.hero-cine h1{color:#fff;margin-bottom:var(--space-5);font-size:clamp(2.1rem,1.6rem + 2.8vw,3.5rem)}
 .hero-cine .lead{color:rgba(255,255,255,.92);max-width:48ch;margin-bottom:var(--space-7)}
 .hero-cine .hero-actions{display:flex;flex-wrap:wrap;gap:var(--space-4)}
 @media(max-width:680px){
@@ -175,7 +175,7 @@ p{max-width:65ch}
 /* ---------- STRIP (pasek skrótów / liczby) ---------- */
 .strip{background:var(--dark);color:#fff}
 .strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-6);padding-block:var(--space-8)}
-.strip .item .k{font-family:var(--font-display);font-size:clamp(1.6rem,1.2rem + 1.4vw,2.4rem);font-weight:800;letter-spacing:-.02em;color:#fff}
+.strip .item .k{font-family:var(--font-display);font-size:clamp(1.12rem,.95rem + .78vw,1.5rem);font-weight:800;letter-spacing:-.02em;color:#fff}
 .strip .item .v{font-size:var(--text-sm);color:rgba(255,255,255,.66);margin-top:var(--space-2);line-height:1.45}
 .strip .item{border-left:2px solid var(--accent);padding-left:var(--space-5)}
 
@@ -205,8 +205,8 @@ p{max-width:65ch}
 .svc::before{content:"";position:absolute;left:0;top:0;width:3px;height:0;background:var(--accent);transition:height var(--dur) var(--ease)}
 .svc:hover{transform:translateY(-4px);box-shadow:var(--sh-md);border-color:transparent}
 .svc:hover::before{height:100%}
-.svc .ic{font-family:var(--font-display);font-size:.8rem;font-weight:700;letter-spacing:.12em;color:var(--accent);margin-bottom:var(--space-4)}
-.svc h3{margin-bottom:var(--space-3);font-size:1.22rem}
+.svc .ic{font-family:var(--font-display);font-size:.74rem;font-weight:700;letter-spacing:.12em;color:var(--accent);margin-bottom:var(--space-4)}
+.svc h3{margin-bottom:var(--space-3);font-size:1.06rem}
 .svc p{color:var(--muted);font-size:var(--text-base);line-height:1.6}
 
 /* big detailed service rows */
@@ -216,8 +216,8 @@ p{max-width:65ch}
 .svc-row.rev .svc-row-art{order:-1}
 .svc-row-art{aspect-ratio:4/3;border-radius:var(--r-md);overflow:hidden;box-shadow:var(--sh-md)}
 .svc-row-art img{width:100%;height:100%;object-fit:cover}
-.svc-row h3{font-size:1.5rem;margin-bottom:var(--space-4)}
-.svc-row .num{font-family:var(--font-display);font-size:.85rem;font-weight:700;letter-spacing:.14em;color:var(--accent);display:block;margin-bottom:var(--space-3)}
+.svc-row h3{font-size:1.26rem;margin-bottom:var(--space-4)}
+.svc-row .num{font-family:var(--font-display);font-size:.78rem;font-weight:700;letter-spacing:.14em;color:var(--accent);display:block;margin-bottom:var(--space-3)}
 .svc-row ul{list-style:none;margin-top:var(--space-4);display:flex;flex-direction:column;gap:var(--space-2)}
 .svc-row li{position:relative;padding-left:var(--space-5);color:var(--muted);font-size:var(--text-base)}
 .svc-row li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:1px;background:var(--accent)}
@@ -254,8 +254,8 @@ p{max-width:65ch}
 .trust{background:var(--paper-2)}
 .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--space-5);margin-top:var(--space-7)}
 .trust-card{background:#fff;border-radius:var(--r-md);padding:var(--space-7) var(--space-6);box-shadow:var(--sh-sm);border-top:3px solid var(--accent)}
-.trust-card .big{font-family:var(--font-display);font-size:clamp(1.8rem,1.3rem + 1.6vw,2.6rem);font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1}
-.trust-card h3{font-size:1.12rem;margin:var(--space-3) 0 var(--space-2)}
+.trust-card .big{font-family:var(--font-display);font-size:clamp(1.45rem,1.1rem + 1.25vw,2.05rem);font-weight:800;letter-spacing:-.02em;color:var(--ink);line-height:1}
+.trust-card h3{font-size:1rem;margin:var(--space-3) 0 var(--space-2)}
 .trust-card p{color:var(--muted);font-size:var(--text-base);line-height:1.55}
 
 /* ---------- CTA band ---------- */
@@ -289,9 +289,9 @@ p{max-width:65ch}
 /* ---------- FOOTER ---------- */
 footer{background:var(--dark);color:#fff;padding-block:var(--space-9) var(--space-6)}
 .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--space-7);margin-bottom:var(--space-8)}
-.foot-brand .name{font-family:var(--font-display);font-weight:800;font-size:1.4rem;letter-spacing:.04em}
+.foot-brand .name{font-family:var(--font-display);font-weight:800;font-size:1.18rem;letter-spacing:.04em}
 .foot-brand p{color:rgba(255,255,255,.62);margin-top:var(--space-4);font-size:var(--text-base);max-width:38ch}
-.foot-col h4{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:var(--space-4)}
+.foot-col h4{font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:var(--space-4)}
 .foot-col a,.foot-col p{display:block;color:rgba(255,255,255,.82);font-size:var(--text-base);margin-bottom:var(--space-3)}
 .foot-col a:hover{color:#fff}
 .foot-bot{border-top:1px solid rgba(255,255,255,.12);padding-top:var(--space-5);display:flex;justify-content:space-between;flex-wrap:wrap;gap:var(--space-3);
@@ -387,7 +387,7 @@ section{padding-block:clamp(64px,8vw,128px)}
 /* 6) MANIFESTO — pełnoekranowy cytat-bohater (zastępuje generyczne „Dlaczego my") */
 .manifesto{background:var(--paper-2);text-align:center}
 .manifesto .wrap{max-width:60rem}
-.manifesto p{font-family:var(--font-display);font-style:italic;font-size:clamp(1.6rem,1rem + 2.4vw,2.8rem);line-height:1.32;color:var(--ink-soft);margin-inline:auto;max-width:26ch;position:relative;padding-top:var(--space-8)}
+.manifesto p{font-family:var(--font-display);font-style:italic;font-size:clamp(1.25rem,.88rem + 1.85vw,2.05rem);line-height:1.32;color:var(--ink-soft);margin-inline:auto;max-width:26ch;position:relative;padding-top:var(--space-8)}
 .manifesto p::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:54px;height:1px;background:var(--accent)}
 .manifesto p span{color:var(--accent);font-style:italic}
 
@@ -397,7 +397,7 @@ section{padding-block:clamp(64px,8vw,128px)}
 .gateway img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease),filter .5s var(--ease)}
 .gateway::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 38%,rgba(18,24,28,.74))}
 .gateway:hover img{transform:scale(1.05);filter:brightness(1.05)}
-.gateway .g-ttl{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:var(--space-6) var(--space-5);color:#fff;font-family:var(--font-display);font-size:1.45rem;letter-spacing:-.01em;line-height:1.15}
+.gateway .g-ttl{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:var(--space-6) var(--space-5);color:#fff;font-family:var(--font-display);font-size:1.2rem;letter-spacing:-.01em;line-height:1.15}
 .gateway .g-ttl small{display:block;font-family:var(--font-body);font-size:var(--text-sm);font-weight:400;opacity:.82;letter-spacing:.03em;margin-top:5px}
 @media(max-width:760px){.gateways{grid-template-columns:1fr}.gateway{aspect-ratio:16/10}}
 
@@ -413,10 +413,10 @@ section{padding-block:clamp(64px,8vw,128px)}
    dokument przy długich polskich słowach na telefonach. Tu ją zjeżdżamy. */
 @media (max-width:560px){
   :root{
-    --text-h1:clamp(1.9rem, 1.15rem + 4.4vw, 2.7rem);
-    --text-h2:clamp(1.5rem, 1rem + 3vw, 2.1rem);
+    --text-h1:clamp(1.62rem, 1.05rem + 3.4vw, 2.2rem);
+    --text-h2:clamp(1.3rem, .95rem + 2.2vw, 1.75rem);
   }
-  .hero-cine h1{font-size:clamp(1.9rem, 1.15rem + 4.4vw, 2.7rem)}
+  .hero-cine h1{font-size:clamp(1.62rem, 1.05rem + 3.4vw, 2.2rem)}
   h1,h2{overflow-wrap:break-word}
 }
 
@@ -562,6 +562,7 @@ img[data-rotate].mt-under{opacity:1}
    Klik w menu przestaje być białym mignięciem — strony przenikają, a pasek
    nawigacji zostaje w miejscu (nazwany element). Przeglądarki bez wsparcia
    nawigują normalnie — zero ryzyka. */
+/* WYŁĄCZONE 27.07.2026 (prośba: „wywal animacje") — strony przełączają się normalnie.
 @view-transition{navigation:auto}
 @media (prefers-reduced-motion:no-preference){
   ::view-transition-old(root){animation:mtVtOut .26s ease both}
@@ -571,6 +572,7 @@ img[data-rotate].mt-under{opacity:1}
 }
 .nav{view-transition-name:mt-nav}
 footer{view-transition-name:mt-foot}
+*/
 
 /* ---------- 6) PASEK POSTĘPU CZYTANIA — 2px w kolorze marki ----------
    Też scroll-driven (bez JS). Wstawiany przez JS tylko gdy przeglądarka umie. */
@@ -628,3 +630,38 @@ footer{view-transition-name:mt-foot}
 
 /* === auto-paleta ze zdjęć klienta (dopasowanie do estetyki socials) === */
 :root{--accent:#9A6228;--accent-d:#75481A;--accent-soft:rgba(154,98,40,0.10);--paper:#F9F9F8;--paper-2:#EFEEED;--paper-3:#E8E7E5;}
+
+/* ============================================================
+   BEZ ANIMACJI (27.07.2026 - prośba: „wywal animacje")
+   Strona ma być STATYCZNA: zero wjeżdżania sekcji przy scrollu, zero kurtyn
+   i zoomów na zdjęciach, zero parallaxu, przenikania nagłówka, przejść między
+   podstronami i paska postępu. Zostają wyłącznie zwykłe stany :hover
+   (kolor, obramowanie) - bez ruchu i bez przenikania.
+   Warstwa jest CELOWO na końcu pliku, żeby wygrywała z blokami wyżej.
+   Gdyby kiedyś ruch miał wrócić - usuwa się ten jeden blok + odkomentowuje
+   sekcję View Transitions wyżej i przywraca MOTION LAYER w assets/main.js.
+   ============================================================ */
+*,*::before,*::after{animation:none!important;transition:none!important;transition-delay:0s!important}
+html{scroll-behavior:auto}
+
+/* nic nie ma prawa zostać ukryte po wyłączeniu ruchu */
+.reveal,.reveal.in{opacity:1!important;transform:none!important;translate:none!important;scale:none!important}
+.mt-fade{opacity:1!important;translate:0 0!important}
+.mt-lines .mt-line>i{translate:0 0!important}
+.mt-on .mt-ph>img,.mt-on .mt-ph>picture>img,.mt-para>img{clip-path:none!important;scale:1!important;height:100%;top:0}
+.mt-breathe{opacity:1!important}
+.hero-cine>img{opacity:1!important}
+.mt-progress,.mt-hero-layer{display:none!important}
+/* hairline pod nagłówkiem sekcji od razu na miejscu (nie „rysuje się") */
+.head h2::after,.head.reveal.in h2::after,.head.center.reveal.in h2::after{width:54px}
+
+/* hover bez ruchu: żadnych podskoków, zoomów zdjęć i przelotu światła */
+.btn:hover,.btn-accent:hover,.btn-ghost:hover,.btn-light:hover,.btn:active,
+.svc:hover,.mt-on .svc:hover,.tile:hover,.trust-card:hover{transform:none!important;translate:none!important}
+.btn:hover .arr{transform:none!important}
+.tile:hover img,.gateway:hover img,.tile img,.gateway img{transform:none!important;scale:1!important;filter:none!important}
+.btn::after{display:none!important}
+/* pasek nawigacji nie kurczy się przy przewijaniu (zostaje sam cień) */
+.nav.is-stuck .nav-inner{height:72px}
+.nav.is-stuck .brand-logo{height:64px}
+@media(max-width:680px){.nav.is-stuck .brand-logo{height:46px}}
